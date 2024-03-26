@@ -218,7 +218,7 @@ section h2{
 
 .projects {
     position: relative;
-    height: 600px;
+    height: 500px;
 }
 
 .card-project {
@@ -267,30 +267,25 @@ section h2{
     transform: translateX(0);
 }
 
-#next{
-    position: absolute;
-    top: 50%;
-    left: 200px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 2rem;
-    color: white;
-}
-
-#prev{
-    position: absolute;
-    top: 50%;
-    left: -250px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 2rem;
-    color: white;
-}
-
 #next,
 #prev{
+    cursor: pointer;
+    font-size: 4rem;
+    color: white;
     background: transparent;
     border: none;
+}
+
+#next{
+    position: absolute;
+    right: 20%;
+    top: 80%;
+}
+
+#prev{
+    position: absolute;
+    left: 20%;
+    top: 80%;
 }
 
 #next:hover,
