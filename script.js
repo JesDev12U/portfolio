@@ -54,3 +54,7 @@ nextButton.addEventListener("click", () => {
 });
 
 updateProject();
+
+setInterval(() => {
+  nextButton.click();
+}, 5000);

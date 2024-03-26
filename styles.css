@@ -313,6 +313,7 @@ aside a:hover{
     color: white;
     background: transparent;
     border: none;
+    z-index: 1000;
 }
 
 #next{
