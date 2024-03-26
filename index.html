@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Jesus</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./responsive.css" />
     <script
       src="https://kit.fontawesome.com/ecae724dfb.js"
       crossorigin="anonymous"
@@ -13,7 +14,13 @@
   <body>
     <header>
       <h1>Jesus Antonio Lopez Bandala</h1>
-      <nav>
+      <button class="open-menu" id="open">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav id="nav" class="nav">
+        <button id="close" class="close-menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about-me">About me</a></li>
@@ -261,5 +268,6 @@
     <script src="./particlesjs-config.json"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="./script.js"></script>
+    <script src="./responsive.js"></script>
   </body>
 </html>

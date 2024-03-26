@@ -1,0 +1,59 @@
+.open-menu,
+.close-menu{
+    display: none;
+}
+
+@media screen and (max-width: 940px){
+    .open-menu,
+    .close-menu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 100px;
+        cursor: pointer;
+        border: 0;
+        font-size: 2.25rem;
+        background-color: transparent;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    nav{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        background-color: #000000;
+        backdrop-filter: blur(5px);
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+    }
+
+    .nav.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul{
+        flex-direction: column;
+        align-items: end;
+        height: 400px;
+    }
+
+    nav ul li{
+        margin: 1rem 0;
+        margin-top: 2em;
+    }
+
+    nav ul li a{
+        color: #fff;
+        font-size: 1.5rem;
+    }
+}
