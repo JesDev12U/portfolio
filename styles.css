@@ -219,18 +219,20 @@ section h2{
 .projects {
     position: relative;
     height: 500px;
-}
-
-.projects{
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 70% 200% 70%; /* Ajusta esto según tus necesidades */
+    grid-template-rows: auto; /* Ajusta esto según tus necesidades */
     justify-content: center;
     align-items: center;
 }
 
 .card-project {
     position: absolute;
-    top: 0;
-    left: -7vw;
+    /* top: 0;
+    left: -7vw; */
+    grid-column: 2;
+    grid-row: 1;
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     text-align: center;
@@ -274,7 +276,7 @@ section h2{
 
 #next,
 #prev{
-    position: relative;
+    /* position: relative; */
     margin: 0 10px;
     cursor: pointer;
     font-size: 4rem;
@@ -284,11 +286,13 @@ section h2{
 }
 
 #next{
-    left: 100%;
+    grid-column: 3;
+    grid-row: 1;
 }
 
 #prev{
-    right: 100%;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 #next:hover,
