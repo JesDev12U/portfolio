@@ -231,6 +231,7 @@ section h2{
     position: absolute;
     /* top: 0;
     left: -7vw; */
+    transform: translateX(-70%);
     grid-column: 2;
     grid-row: 1;
     opacity: 0;
