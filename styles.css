@@ -81,11 +81,32 @@ aside{
     margin-bottom: 20px;
 }
 
-aside img{
+@keyframes rgb {
+    0% {border-color: red;}
+    20% {border-color: orange;}
+    40% {border-color: yellow;}
+    60% {border-color: green;}
+    80% {border-color: blue;}
+    100% {border-color: purple;}
+}
+
+@keyframes gradient {
+    0% {background-position: 0%;}
+    100% {background-position: 100%;}
+}
+
+aside img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     margin-bottom: 20px;
+    border: 10px solid transparent; /* Define el grosor del borde aquí */
+    background-clip: padding-box, border-box; 
+    box-decoration-break: clone;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), /* Fondo de la imagen */
+                      linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Colores del borde */
+    background-size: 200% 200%;
+    animation: gradient 3s linear infinite; /* Ajusta la duración de la animación aquí */
 }
 
 main{
@@ -93,6 +114,12 @@ main{
     top:100px;
     width: 80%;
     left:20%;
+}
+
+#title-name{
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .technologies{
@@ -124,4 +151,19 @@ main{
 .card-technologie h3{
     font-size: 1.5rem;
     margin-top: 50px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: black;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: -500px;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(10px);
 }

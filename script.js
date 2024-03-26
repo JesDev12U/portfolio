@@ -7,7 +7,7 @@ const typed = new Typed(".typed", {
 });
 
 const typed2 = new Typed(".typed2", {
-  strings: ["Informatic", "Developer", "FullStack"],
+  strings: ["Informatic", "Developer", "Fullstack"],
   loop: true,
   typeSpeed: 75,
   backSpeed: 75,
