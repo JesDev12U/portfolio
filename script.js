@@ -1,5 +1,5 @@
 const typed = new Typed(".typed", {
-  strings: ["Jesus Antonio Lopez Bandala", "JesDev12U"],
+  strings: ["Jesus Antonio", "JesDev12U"],
   loop: true,
   typeSpeed: 75,
   backSpeed: 75,
