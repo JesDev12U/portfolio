@@ -262,7 +262,8 @@ section h2{
     margin-top: 20px;
 }
 
-.card-project a{
+.card-project a,
+aside a{
     text-decoration: none;
     color: white;
     font-size: 1rem;
@@ -272,7 +273,28 @@ section h2{
     border-radius: 20px;
 }
 
-.card-project a:hover{
+@keyframes pulsate {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+aside a{
+    margin: 0;
+    background-color: #0f0f0f;
+    animation: pulsate 2s linear infinite;
+}
+
+.card-project a:hover,
+aside a:hover{
     border: 3px solid;
     animation: rainbow 2s linear infinite;
 }
