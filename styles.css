@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: Consolas, monospace;
     color: #fff;
@@ -113,6 +117,21 @@ main{
     top:100px;
     width: 80%;
     left:20%;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+section h2{
+    font-size: 4em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 200px;
 }
 
 #title-name{
