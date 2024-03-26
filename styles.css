@@ -170,7 +170,8 @@ section h2{
     font-size: 1.5rem;
     color: white;
 }
-.technologies{
+.technologies,
+.skills{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,7 +179,8 @@ section h2{
     width: 95%;
 }
 
-.card-technologie{
+.card-technologie,
+.card-skill{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -203,11 +205,13 @@ section h2{
     100% {border-color: rgb(255, 0, 0);}
 }
 
-.card-technologie img{
+.card-technologie img,
+.card-skill img{
     width: 70px;
 }
 
-.card-technologie h3{
+.card-technologie h3,
+.card-skill h3{
     font-size: 1.5rem;
     margin-top: 50px;
 }
