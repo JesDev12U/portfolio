@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Jesus</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./responsive.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
     <script
       src="https://kit.fontawesome.com/ecae724dfb.js"
       crossorigin="anonymous"
@@ -13,7 +13,8 @@
   </head>
   <body>
     <header>
-      <h1>Jesus Antonio Lopez Bandala</h1>
+      <button class="open-info"><i class="fa-solid fa-circle-info"></i></button>
+      <h1 id="my-name">Jesus Antonio Lopez Bandala</h1>
       <button class="open-menu" id="open">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -31,7 +32,8 @@
         </ul>
       </nav>
     </header>
-    <aside>
+    <aside class="aside">
+      <button class="close-info"><i class="fa-solid fa-xmark"></i></button>
       <img src="./img/me.png" alt="Jesus Antonio Lopez Bandala" />
       <h1>Jesus Antonio Lopez Bandala</h1>
       <p><span class="typed2"></span></p>
@@ -264,10 +266,11 @@
     </main>
     <footer>&copy; Jesus Antonio Lopez Bandala</footer>
     <div id="particles-js"></div>
-    <script src="./particles.min.js"></script>
-    <script src="./particlesjs-config.json"></script>
+    <script src="./js/particles.min.js"></script>
+    <script src="./js/particlesjs-config.json"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="./script.js"></script>
-    <script src="./responsive.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/responsive-nav.js"></script>
+    <script src="./js/responsive-aside.js"></script>
   </body>
 </html>

@@ -1,5 +1,7 @@
 .open-menu,
-.close-menu{
+.close-menu,
+.open-info,
+.close-info{
     display: none;
 }
 
@@ -55,5 +57,41 @@
     nav ul li a{
         color: #fff;
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    aside img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 910px){
+    #my-name{
+        display: none;
+    }
+
+    .open-info,
+    .close-info{
+        display: block;
+        cursor: pointer;
+        border: 0;
+        font-size: 2.25rem;
+        background-color: transparent;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    aside {
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .aside.visible{
+        opacity: 1;
+        visibility: visible;
+        background-color: #000000;
     }
 }
