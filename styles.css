@@ -187,9 +187,20 @@ section h2{
     backdrop-filter: blur(20px);
     padding: 20px;
     border-radius: 10px;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
+    border: 3px solid;
+    animation: rainbow 2s linear infinite;
+    margin-right: 20px;
+}
+
+@keyframes rainbow {
+    0% {border-color: rgb(255, 0, 0);}
+    14% {border-color: rgb(255, 127, 0);}
+    28% {border-color: rgb(255, 255, 0);}
+    42% {border-color: rgb(127, 255, 0);}
+    57% {border-color: rgb(0, 255, 0);}
+    71% {border-color: rgb(0, 255, 127);}
+    85% {border-color: rgb(0, 255, 255);}
+    100% {border-color: rgb(255, 0, 0);}
 }
 
 .card-technologie img{
