@@ -173,10 +173,12 @@ section h2{
 .technologies,
 .skills{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    width: 95%;
+    width: 90%;
+    height: auto;
 }
 
 .card-technologie,

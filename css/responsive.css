@@ -94,4 +94,9 @@
         visibility: visible;
         background-color: #000000;
     }
+
+    main{
+        left: 10%;
+        top: 10vh;
+    }
 }
