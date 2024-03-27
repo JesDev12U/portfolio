@@ -163,3 +163,49 @@
         margin-top: 50px;
     }
 }
+
+@media screen and (max-width: 465px){
+    #technologies h2{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .terminal .title-terminal{
+        font-size: 0.7rem;
+    }
+
+    .terminal{
+        width: 70%;
+    }
+
+    #title-name{
+        margin-top: 40px;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1366px),
+screen and (max-width: 912px) and (max-height: 1368px){
+    #title-name{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (max-height: 545px){
+    aside img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-height: 425px){
+    aside h1{
+        font-size: 1.2rem;
+    }
+
+    aside img{
+        width: 80px;
+        height: 80px;
+    }
+}
