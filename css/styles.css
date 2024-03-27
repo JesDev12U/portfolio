@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
 
 body{
-    font-family: Consolas, monospace;
+    font-family: "Inconsolata", monospace;
     color: #fff;
     margin: 0;
     padding: 0;
