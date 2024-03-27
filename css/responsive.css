@@ -192,6 +192,12 @@ screen and (max-width: 912px) and (max-height: 1368px){
     }
 }
 
+@media screen and (max-width: 390px){
+    #title-name{
+        margin-top: 20%;
+    }
+}
+
 @media screen and (max-height: 545px){
     aside img{
         width: 100px;
@@ -207,5 +213,17 @@ screen and (max-width: 912px) and (max-height: 1368px){
     aside img{
         width: 80px;
         height: 80px;
+    }
+}
+
+@media screen and (max-height: 466px){
+    aside{
+        max-height: 100vh;
+        overflow: scroll;
+        overflow-y: auto;
+    }
+
+    nav{
+        overflow: scroll;
     }
 }
