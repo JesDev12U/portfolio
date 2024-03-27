@@ -100,3 +100,50 @@
         top: 10vh;
     }
 }
+
+@media screen and (max-width: 1200px){
+    .projects{
+        width: 70%;
+        grid-template-columns: 80% 350% 50%;
+    }
+
+    .card-project{
+        margin-top: 50px;
+        width: 150%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .projects{
+        display: grid;
+        grid-template-rows: auto auto; 
+        grid-template-columns: 50% 50%; 
+        align-items: center;
+        transform: translateX(-50%);
+        
+    }
+
+    .card-project{
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        width: 200%;
+        margin-top: 100px;
+        
+    }
+
+    #prev{
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    #next{
+        grid-row: 2;
+        grid-column: 2;
+        transform: translateX(300%)
+    }
+
+    #next,
+    #prev{
+        margin-top: 600px;
+    }
+}
