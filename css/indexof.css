@@ -1,48 +1,114 @@
+/* Reset y base */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  margin: 20px;
+  background: #f0f4f8;
+  color: #222;
+  margin: 20px auto;
+  max-width: 960px;
+  padding: 0 20px;
 }
 
-header h1 {
-  color: #005f73;
+h1#indextitle {
+  color: #1769aa;
+  border-bottom: 3px solid #1769aa;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-footer {
-  text-align: center;
-  font-size: 0.9em;
-  color: #888;
-  margin-top: 30px;
-}
-
-table {
+/* Tabla general */
+table#indexlist {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  box-shadow: 0 4px 8px rgb(23 105 170 / 0.1);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-th,
-td {
-  padding: 12px;
-  border-bottom: 1px solid #ccc;
-}
-
-th {
-  background-color: #0a9396;
-  color: white;
+/* Cabecera */
+tr.indexhead th {
+  background-color: #1769aa;
+  color: #fff;
   text-align: left;
+  padding: 12px 15px;
+  font-weight: 600;
+  user-select: none;
 }
 
-tr:hover {
-  background-color: #94d2bd;
-}
-
-a {
-  color: #005f73;
+tr.indexhead th a {
+  color: #a9d1ff;
   text-decoration: none;
+  transition: color 0.3s;
+}
+
+tr.indexhead th a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Filas */
+tr.even {
+  background-color: #f9fbfd;
+}
+
+tr.odd {
+  background-color: #ffffff;
+}
+
+tr.even:hover,
+tr.odd:hover {
+  background-color: #d0e5ff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Celdas */
+td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  color: #333;
+}
+
+/* Iconos */
+td.indexcolicon img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+/* Línea separadora */
+tr.indexbreakrow th {
+  padding: 0;
+  border: none;
+}
+
+tr.indexbreakrow hr {
+  border: none;
+  border-top: 1px solid #d0d7de;
+  margin: 0;
+}
+
+/* Enlaces */
+a {
+  color: #1769aa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #004d99;
+}
+
+/* Dirección del footer Apache */
+address {
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+  margin-top: 40px;
+  font-style: normal;
+  user-select: none;
 }
