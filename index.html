@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Jesus</title>
+    <link rel="icon" href="img/logo.png" />
+    <title>JesDev12U</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
     <script
@@ -24,11 +25,11 @@
         </button>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#about-me">About me</a></li>
-          <li><a href="#technologies">Technologies</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about-me">Acerca de mí</a></li>
+          <li><a href="#technologies">Tecnologías</a></li>
+          <!-- <li><a href="#skills">Habilidades</a></li> -->
+          <li><a href="#projects">Mis proyectos destacados</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
     </header>
@@ -37,35 +38,46 @@
       <img src="./img/me.png" alt="Jesus Antonio Lopez Bandala" />
       <h1>Jesus Antonio Lopez Bandala</h1>
       <p><span class="typed2"></span></p>
-      <a href="#">Download CV</a>
+      <a
+        href="https://jesdev12u.duckdns.org/files"
+        style="display: flex; flex-direction: row; justify-content: center"
+        ><img
+          src="./img/files.jpg"
+          style="width: 50px; height: 50px"
+          alt="Files"
+        />
+      </a>
     </aside>
     <span id="home"></span>
 
     <main>
-      <h1 id="title-name">I'm<br /><span class="typed"></span></h1>
+      <h1 id="title-name">Soy<br /><span class="typed"></span></h1>
       <div class="terminal">
         <div class="title-terminal">
           <p>portfolio.sh -- bash -- 80x10</p>
         </div>
         <div class="terminal-container">
-          <p>$ <span class="typed3"></span></p>
+          <p>~<br />❯ <span class="typed3"></span></p>
         </div>
       </div>
       <section id="about-me">
-        <h2>About me</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          expedita ea excepturi harum cum aliquam nulla optio? Iste modi autem a
-          veritatis tempora sint impedit maxime odio aliquam, ad quas. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Iure recusandae
-          culpa, iste corrupti totam unde, reprehenderit magnam nostrum ipsa
-          dignissimos tenetur qui eos repudiandae, nobis consequatur asperiores
-          suscipit. Voluptatibus, soluta.
+        <h2>Acerca de mí</h2>
+        <p style="padding: 30px; font-size: 2em">
+          Soy estudiante de sexto semestre en Ingeniería en Informática, carrera
+          que se imparte en IPN UPIICSA. Soy apasionado en toda la área de
+          desarrollo y de sistemas operativos, capaz de desarrollar aplicaciones
+          web, aplicaciones móviles, montar servidores y muchas cosas más
+          relacionadas con TI. Esta página muestra algunos de mis proyectos
+          destacados, ¡Espero les guste!
         </p>
       </section>
       <section id="technologies">
-        <h2>Technologies</h2>
+        <h2>Tecnologías</h2>
         <div class="technologies">
+          <div class="card-technologie">
+            <img src="./img/Tux.png" alt="Linux" />
+            <h3>Linux</h3>
+          </div>
           <div class="card-technologie">
             <img src="./img/html.png" alt="HTML" />
             <h3>HTML</h3>
@@ -79,7 +91,19 @@
             <h3>Javascript</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/java.png" alt="Java" />
+            <img src="./img/typescript.svg" alt="Javascript" />
+            <h3>TypeScript</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/vuejs.svg" alt="Javascript" />
+            <h3>VueJS</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/nodejs.svg" alt="Javascript" />
+            <h3>NodeJS</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/java.webp" alt="Java" />
             <h3>Java</h3>
           </div>
           <div class="card-technologie">
@@ -103,19 +127,27 @@
             <h3>PHP</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/sqlserver.png" alt="SQL Server" />
-            <h3>SQL Server</h3>
+            <img src="./img/composer.png" alt="PHP" />
+            <h3>Composer</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/mysql.png" alt="MySQL" />
+            <img src="./img/mysql.avif" alt="MySQL" />
             <h3>MySQL</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/flask.png" alt="Flask" />
+            <img src="./img/firebase.svg" alt="MySQL" />
+            <h3>Firebase</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/sqlite.svg" alt="MySQL" />
+            <h3>SQLite</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/flask.svg" alt="Flask" />
             <h3>Flask</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/django.png" alt="Django" />
+            <img src="./img/django.svg" alt="Django" />
             <h3>Django</h3>
           </div>
           <div class="card-technologie">
@@ -128,7 +160,7 @@
           </div>
         </div>
       </section>
-      <section id="skills">
+      <!-- <section id="skills">
         <h2>Skills</h2>
         <div class="skills">
           <div class="card-skill">
@@ -152,71 +184,59 @@
             <p>Responsability</p>
           </div>
         </div>
-      </section>
+      </section> -->
       <section id="projects">
         <h2>Projects</h2>
         <div class="projects-slider">
           <div class="projects">
             <div class="card-project">
-              <img src="./img/project.png" alt="Project 1" />
-              <h3>Project 1</h3>
+              <img src="./img/project1.jpeg" alt="Project 1" />
+              <h3>Condominios</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                quod, voluptates, quae, quia quibusdam quos dolorum
-                necessitatibus doloremque quidem voluptatum nemo.
+                Proyecto WEB desarrollado con HTML, CSS, JavaScript y PHP para
+                la gestión de un condomino.
               </p>
               <br />
-              <a href="#">See on GitHub</a>
+              <a href="https://github.com/JesDev12U/condominios" target="_blank"
+                >Ver en GitHub</a
+              >
             </div>
             <div class="card-project">
-              <img src="./img/project.png" alt="Project 2" />
-              <h3>Project 2</h3>
+              <img src="./img/project2.png" alt="Project 2" />
+              <h3>Checkpoint</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                quod, voluptates, quae, quia quibusdam quos dolorum
-                necessitatibus doloremque quidem voluptatum nemo. Quisquam
-                voluptates, quae, quia quibusdam quos dolorum necessitatibus
-                doloremque quidem voluptatum nemo.
+                Proyecto WEB desarrollado con HTML, CSS, JavaScript y PHP para
+                una tienda de videojuegos.
               </p>
               <br />
-              <a href="#">See on GitHub</a>
+              <a href="https://github.com/JesDev12U/checkpoint" target="_blank"
+                >Ver en GitHub</a
+              >
             </div>
             <div class="card-project">
-              <img src="./img/project.png" alt="Project 3" />
-              <h3>Project 3</h3>
+              <img src="./img/project3.jpeg" alt="Project 3" />
+              <h3>Vocafe 12</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                quod, voluptates, quae, quia quibusdam quos dolorum
-                necessitatibus doloremque quidem voluptatum nemo. Quisquam
-                voluptates, quae, quia quibusdam quos dolorum necessitatibus
-                doloremque quidem voluptatum nemo.
+                Aplicación móvil hecha con Java para la cafetería del CECyT 12
               </p>
               <br />
-              <a href="#">See on GitHub</a>
+              <a href="https://github.com/JesDev12U/vocafe12" target="_blank"
+                >Ver en GitHub</a
+              >
             </div>
             <div class="card-project">
-              <img src="./img/project.png" alt="Project 4" />
-              <h3>Project 4</h3>
+              <img src="./img/project4.png" alt="Project 4" />
+              <h3>Huffman</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                quod, voluptates, quae, quia quibusdam quos dolorum
-                necessitatibus doloremque quidem voluptatum nemo. Quisquam
-                voluptates, quae,
+                Algoritmo Huffman para compresión de archivos. Algoritmo hecho
+                en C++ con Servidor web en Python.
               </p>
               <br />
-              <a href="#">See on GitHub</a>
-            </div>
-            <div class="card-project">
-              <img src="./img/project.png" alt="Project 5" />
-              <h3>Project 5</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                quod, voluptates, quae, quia quibusdam quos dolorum
-                necessitatibus doloremque quidem voluptatum nemo. Quisquam
-                voluptates, quae,
-              </p>
-              <br />
-              <a href="#">See on GitHub</a>
+              <a
+                href="https://github.com/JesDev12U/huffman-algorithm"
+                target="_blank"
+                >Ver en GitHub</a
+              >
             </div>
             <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
             <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
@@ -224,35 +244,40 @@
         </div>
       </section>
       <section id="contact">
-        <h2>Contact</h2>
-        <p>You can send me a message on any of my social networks</p>
+        <h2>Contacto</h2>
+        <p>Puedes contactarme en los siguientes medios</p>
         <div class="wrapper">
           <div class="button">
-            <a href="#">
+            <a
+              href="https://www.facebook.com/jesusantonio.lopezbandala.7/"
+              target="_blank"
+            >
               <div class="icon"><i class="fab fa-facebook-f"></i></div>
               <span>Facebook</span>
             </a>
           </div>
           <div class="button">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/jalb12u/" target="_blank">
               <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
               <span>Linkedin</span>
             </a>
           </div>
           <div class="button">
-            <a href="#">
+            <a href="https://www.instagram.com/jesdev12u/" target="_blank">
               <div class="icon"><i class="fab fa-instagram"></i></div>
               <span>Instagram</span>
             </a>
           </div>
           <div class="button">
-            <a href="#">
+            <a href="https://github.com/JesDev12U" target="_blank">
               <div class="icon"><i class="fab fa-github"></i></div>
               <span>GitHub</span>
             </a>
           </div>
           <div class="button">
-            <a href="#"
+            <a
+              href="https://www.youtube.com/@jesusantoniolopezbandala3569"
+              target="_blank"
               ><div class="icon"><i class="fab fa-youtube"></i></div>
               <span>YouTube</span></a
             >

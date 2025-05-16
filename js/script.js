@@ -7,7 +7,7 @@ const typed = new Typed(".typed", {
 });
 
 const typed2 = new Typed(".typed2", {
-  strings: ["Informatic", "Developer", "Fullstack"],
+  strings: ["Informático", "Desarrollador", "Fullstack"],
   loop: true,
   typeSpeed: 75,
   backSpeed: 75,
@@ -16,9 +16,9 @@ const typed2 = new Typed(".typed2", {
 
 const typed3 = new Typed(".typed3", {
   strings: [
-    "Welcome to my portfolio!",
-    "In this site you can see my projects",
-    "I hope you like it!",
+    "Bienvenido a mi portafolio!",
+    "En este sitio podrás ver mis proyectos y más",
+    "¡Espero les guste!",
   ],
   loop: true,
   typeSpeed: 75,
@@ -54,7 +54,3 @@ nextButton.addEventListener("click", () => {
 });
 
 updateProject();
-
-setInterval(() => {
-  nextButton.click();
-}, 5000);
