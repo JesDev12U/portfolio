@@ -14,8 +14,12 @@
   </head>
   <body>
     <header>
-      <button class="open-info"><i class="fa-solid fa-circle-info"></i></button>
-      <h1 id="my-name">Jesus Antonio Lopez Bandala</h1>
+      <div class="header-left">
+        <button class="open-info">
+          <i class="fa-solid fa-circle-info"></i>
+        </button>
+        <h1 id="my-name">JesDev12U</h1>
+      </div>
       <button class="open-menu" id="open">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -27,7 +31,6 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about-me">Acerca de mí</a></li>
           <li><a href="#technologies">Tecnologías</a></li>
-          <!-- <li><a href="#skills">Habilidades</a></li> -->
           <li><a href="#projects">Mis proyectos destacados</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
@@ -38,6 +41,14 @@
       <img src="./img/me.png" alt="Jesus Antonio Lopez Bandala" />
       <h1>Jesus Antonio Lopez Bandala</h1>
       <p><span class="typed2"></span></p>
+      <a
+        href="https://docs.google.com/document/d/1itxllgDp-G7XuR3f_-_GeJkAEsRgiI6f/edit"
+        target="_blank"
+        class="cv-button"
+      >
+        <i class="fas fa-download"></i>
+        Ver mi CV
+      </a>
     </aside>
     <span id="home"></span>
 
@@ -45,30 +56,36 @@
       <h1 id="title-name">Soy<br /><span class="typed"></span></h1>
       <div class="terminal">
         <div class="title-terminal">
-          <p>portfolio.sh -- bash -- 80x10</p>
+          <p class="terminal-title-full">jesdev12u@dev: ~/portfolio</p>
+          <p class="terminal-title-short">jesdev12u@dev</p>
         </div>
         <div class="terminal-container">
-          <p>~<br />❯ <span class="typed3"></span></p>
+          <p>
+            <span style="color: #ff79c6">jesdev12u@dev</span>:<span
+              style="color: #8be9fd"
+              >~/portfolio</span
+            >$ <span style="color: #0dcbcb">./show_portfolio.sh</span><br />
+            <span style="color: #19cb00">❯</span>
+            <span class="typed3"></span>
+          </p>
         </div>
       </div>
       <section id="about-me">
         <h2>Acerca de mí</h2>
         <p style="padding: 30px; font-size: 2em">
-          Soy estudiante de sexto semestre en Ingeniería en Informática, carrera
-          que se imparte en IPN UPIICSA. Soy apasionado en toda la área de
-          desarrollo y de sistemas operativos, capaz de desarrollar aplicaciones
-          web, aplicaciones móviles, montar servidores y muchas cosas más
-          relacionadas con TI. Esta página muestra algunos de mis proyectos
-          destacados, ¡Espero les guste!
+          Soy estudiante de séptimo semestre en Ingeniería en Informática,
+          carrera que se imparte en IPN UPIICSA, también soy Técnico en
+          Informática (titulado) por parte del CECyT 12 IPN. Soy apasionado en
+          toda la área de desarrollo y de sistemas operativos, capaz de
+          desarrollar aplicaciones web, aplicaciones móviles, montar servidores
+          y muchas cosas más relacionadas con TI. Esta página muestra algunos de
+          mis proyectos destacados, ¡Espero les guste!
         </p>
       </section>
       <section id="technologies">
         <h2>Tecnologías</h2>
+        <h3>Experiencia en</h3>
         <div class="technologies">
-          <div class="card-technologie">
-            <img src="./img/Tux.png" alt="Linux" />
-            <h3>Linux</h3>
-          </div>
           <div class="card-technologie">
             <img src="./img/html.png" alt="HTML" />
             <h3>HTML</h3>
@@ -86,16 +103,17 @@
             <h3>TypeScript</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/vuejs.svg" alt="Javascript" />
-            <h3>VueJS</h3>
-          </div>
-          <div class="card-technologie">
             <img src="./img/nodejs.svg" alt="Javascript" />
             <h3>NodeJS</h3>
           </div>
+          ç
           <div class="card-technologie">
-            <img src="./img/java.webp" alt="Java" />
-            <h3>Java</h3>
+            <img src="./img/php.png" alt="PHP" />
+            <h3>PHP</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/composer.png" alt="PHP" />
+            <h3>Composer</h3>
           </div>
           <div class="card-technologie">
             <img src="./img/c.png" alt="C" />
@@ -106,131 +124,197 @@
             <h3>C++</h3>
           </div>
           <div class="card-technologie">
+            <img src="./img/java.webp" alt="Java" />
+            <h3>Java</h3>
+          </div>
+          <div class="card-technologie">
             <img src="./img/python.png" alt="Python" />
             <h3>Python</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/bash.png" alt="Bash" />
-            <h3>Bash</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/php.png" alt="PHP" />
-            <h3>PHP</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/composer.png" alt="PHP" />
-            <h3>Composer</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/mysql.avif" alt="MySQL" />
-            <h3>MySQL</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/firebase.svg" alt="MySQL" />
-            <h3>Firebase</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/sqlite.svg" alt="MySQL" />
-            <h3>SQLite</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/flask.svg" alt="Flask" />
-            <h3>Flask</h3>
           </div>
           <div class="card-technologie">
             <img src="./img/django.svg" alt="Django" />
             <h3>Django</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/git.png" alt="Git" />
+            <img src="./img/flask.svg" alt="Flask" />
+            <h3>Flask</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/firebase.svg" alt="MySQL" />
+            <h3>Firebase</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/mysql.webp" alt="MySQL" />
+            <h3>MySQL</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/sqlite.svg" alt="MySQL" />
+            <h3>SQLite</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/git.svg" alt="Git" />
             <h3>Git</h3>
           </div>
           <div class="card-technologie">
             <img src="./img/github.png" alt="GitHub" />
             <h3>GitHub</h3>
           </div>
+          <div class="card-technologie">
+            <img src="./img/Tux.png" alt="Linux" />
+            <h3>Linux</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/bash.png" alt="Bash" />
+            <h3>Bash</h3>
+          </div>
+        </div>
+        <h3>Aprendiendo</h3>
+        <div class="technologies">
+          <div class="card-technologie">
+            <img src="./img/react.png" alt="React.js" />
+            <h3>ReactJS</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/next.png" alt="NextJS" />
+            <h3>NextJS</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/heroui.png" alt="HeroUI" />
+            <h3>HeroUI</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/supabase.png" alt="Supabase" />
+            <h3>Supabase</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/vuejs.svg" alt="Javascript" />
+            <h3>VueJS</h3>
+          </div>
+          <div class="card-technologie">
+            <img src="./img/kotlin.avif" alt="Kotlin" />
+            <h3>Kotlin</h3>
+          </div>
         </div>
       </section>
-      <!-- <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills">
-          <div class="card-skill">
-            <img src="./img/responsability.png" alt="" />
-            <p>Responsability</p>
-          </div>
-          <div class="card-skill">
-            <img src="./img/responsability.png" alt="" />
-            <p>Responsability</p>
-          </div>
-          <div class="card-skill">
-            <img src="./img/responsability.png" alt="" />
-            <p>Responsability</p>
-          </div>
-          <div class="card-skill">
-            <img src="./img/responsability.png" alt="" />
-            <p>Responsability</p>
-          </div>
-          <div class="card-skill">
-            <img src="./img/responsability.png" alt="" />
-            <p>Responsability</p>
-          </div>
-        </div>
-      </section> -->
       <section id="projects">
-        <h2>Projects</h2>
+        <h2>Mis proyectos destacados</h2>
+        <h3>Arrastra las cards para visualizar los proyectos</h3>
         <div class="projects-slider">
-          <div class="projects">
-            <div class="card-project">
+          <div class="projects-container">
+            <div class="card-project" data-index="0">
               <img src="./img/project1.jpeg" alt="Project 1" />
               <h3>Condominios</h3>
               <p>
-                Proyecto WEB desarrollado con HTML, CSS, JavaScript y PHP para
-                la gestión de un condomino.
+                Sistema completo de gestión para condominios con funcionalidades
+                de administración, reportes y control de residentes.
               </p>
-              <br />
-              <a href="https://github.com/JesDev12U/condominios" target="_blank"
-                >Ver en GitHub</a
+              <div class="tech-stack">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">PHP</span>
+              </div>
+              <a
+                href="https://github.com/JesDev12U/condominios"
+                target="_blank"
+                class="project-link"
               >
+                <i class="fab fa-github"></i>
+                Ver en GitHub
+              </a>
             </div>
-            <div class="card-project">
+            <div class="card-project" data-index="1">
               <img src="./img/project2.png" alt="Project 2" />
               <h3>Checkpoint</h3>
               <p>
-                Proyecto WEB desarrollado con HTML, CSS, JavaScript y PHP para
-                una tienda de videojuegos.
+                Plataforma e-commerce especializada en videojuegos con carrito
+                de compras, gestión de inventario y sistema de pagos.
               </p>
-              <br />
-              <a href="https://github.com/JesDev12U/checkpoint" target="_blank"
-                >Ver en GitHub</a
+              <div class="tech-stack">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">PHP</span>
+              </div>
+              <a
+                href="https://github.com/JesDev12U/checkpoint"
+                target="_blank"
+                class="project-link"
               >
+                <i class="fab fa-github"></i>
+                Ver en GitHub
+              </a>
             </div>
-            <div class="card-project">
+            <div class="card-project" data-index="2">
               <img src="./img/project3.jpeg" alt="Project 3" />
               <h3>Vocafe 12</h3>
               <p>
-                Aplicación móvil hecha con Java para la cafetería del CECyT 12
+                App móvil nativa para Android que permite ordenar y gestionar
+                pedidos de la cafetería escolar con interfaz intuitiva.
               </p>
-              <br />
-              <a href="https://github.com/JesDev12U/vocafe12" target="_blank"
-                >Ver en GitHub</a
+              <div class="tech-stack">
+                <span class="tech">Java</span>
+                <span class="tech">Android</span>
+                <span class="tech">MySQL</span>
+              </div>
+              <a
+                href="https://github.com/JesDev12U/vocafe12"
+                target="_blank"
+                class="project-link"
               >
+                <i class="fab fa-github"></i>
+                Ver en GitHub
+              </a>
             </div>
-            <div class="card-project">
+            <div class="card-project" data-index="3">
               <img src="./img/project4.png" alt="Project 4" />
               <h3>Huffman</h3>
               <p>
-                Algoritmo Huffman para compresión de archivos. Algoritmo hecho
-                en C++ con Servidor web en Python.
+                Implementación del algoritmo de compresión Huffman con interfaz
+                web para comprimir y descomprimir archivos eficientemente.
               </p>
-              <br />
+              <div class="tech-stack">
+                <span class="tech">C++</span>
+                <span class="tech">Python</span>
+                <span class="tech">Flask</span>
+              </div>
               <a
                 href="https://github.com/JesDev12U/huffman-algorithm"
                 target="_blank"
-                >Ver en GitHub</a
+                class="project-link"
               >
+                <i class="fab fa-github"></i>
+                Ver en GitHub
+              </a>
             </div>
-            <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
-            <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
+            <div class="card-project" data-index="4">
+              <img src="./img/horarios-saes.png" alt="Project 5" />
+              <h3>Horarios SAES</h3>
+              <p>
+                Extensión para navegadores basados en Chrome para el sitio web
+                SAES IPN, el cual ordena los horarios de los alumnos haciéndolos
+                ver más ordenados y limpios
+              </p>
+              <div class="tech-stack">
+                <span class="tech">JavaScript</span>
+                <span class="tech">CSS</span>
+              </div>
+              <a
+                href="https://github.com/JesDev12U/horarios-saes"
+                target="_blank"
+                class="project-link"
+              >
+                <i class="fab fa-github"></i>
+                Ver en GitHub
+              </a>
+            </div>
+          </div>
+          <div class="slider-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
           </div>
         </div>
       </section>
@@ -276,7 +360,21 @@
         </div>
       </section>
     </main>
-    <footer>&copy; Jesus Antonio Lopez Bandala</footer>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          <p class="footer-copyright">&copy; Jesus Antonio Lopez Bandala</p>
+        </div>
+        <div class="footer-right">
+          <ul class="footer-nav">
+            <li><a href="#home" class="footer-link">Inicio</a></li>
+            <li><a href="#about-me" class="footer-link">Acerca</a></li>
+            <li><a href="#projects" class="footer-link">Proyectos</a></li>
+            <li><a href="#contact" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <div id="particles-js"></div>
     <script src="./js/particles.min.js"></script>
     <script src="./js/particlesjs-config.json"></script>
@@ -284,5 +382,6 @@
     <script src="./js/script.js"></script>
     <script src="./js/responsive-nav.js"></script>
     <script src="./js/responsive-aside.js"></script>
+    <script src="./js/navbar-scroll.js"></script>
   </body>
 </html>

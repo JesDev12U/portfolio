@@ -1,23 +1,208 @@
+/* Controles de visibilidad por defecto */
 .open-menu,
-.close-menu,
+.close-menu {
+  display: none;
+}
+
 .open-info,
 .close-info {
   display: none;
 }
 
+/* En desktop grande (1201px+), mostrar open-info y configurar aside como overlay */
+@media screen and (min-width: 1201px) {
+  .open-info {
+    display: flex;
+  }
+
+  aside {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    width: 280px;
+    height: calc(100vh - 70px);
+    padding: 80px 20px 30px 20px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 999;
+  }
+
+  aside.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .close-info {
+    display: flex;
+  }
+
+  main {
+    width: 100%;
+    left: 0;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main.aside-open {
+    width: calc(100% - 280px);
+    left: 280px;
+    padding: 30px 40px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Rango específico para tablets (911px - 1200px) */
+@media screen and (min-width: 911px) and (max-width: 1200px) {
+  .open-info {
+    display: flex;
+  }
+
+  .close-info {
+    display: flex;
+  }
+
+  aside {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    width: 260px;
+    height: calc(100vh - 70px);
+    padding: 80px 18px 30px 18px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 999;
+  }
+
+  aside.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  main {
+    width: 100%;
+    left: 0;
+    padding: 30px 35px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main.aside-open {
+    width: calc(100% - 260px);
+    left: 260px;
+    padding: 30px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media screen and (max-width: 940px) {
+  /* Asegurar que no haya overflow horizontal y controlar el vertical */
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
+  }
+
+  /* Evitar scroll vertical en el viewport cuando sea necesario */
+
+  /* Contenedor para los botones del menú */
   .open-menu,
   .close-menu {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     border: 0;
-    font-size: 2.25rem;
-    background-color: transparent;
-    cursor: pointer;
+    font-size: 1.8rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
     color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Asegurar que estén dentro del viewport */
+    max-width: calc(100vw - 30px);
+    left: auto;
+  } /* Posicionamiento específico para cada botón */
+  .open-menu {
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    margin-right: 0; /* Asegurar que no haya margin extra */
+    box-sizing: border-box; /* Incluir border y padding en el tamaño */
+  }
+
+  .close-menu {
+    top: 15px;
+    right: 15px;
+    z-index: 1002; /* Más alto que el open-menu */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    position: fixed; /* Asegurar que esté fijo */
+    display: flex; /* Siempre usar flex para que cuando se haga visible se vea correctamente */
+    margin-right: 0; /* Asegurar que no haya margin extra */
+    box-sizing: border-box; /* Incluir border y padding en el tamaño */
+  }
+
+  /* Mostrar el botón de cerrar cuando el nav tiene la clase visible */
+  .nav.visible .close-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    pointer-events: all !important;
+    display: flex !important;
+  }
+
+  /* Ocultar el botón de abrir cuando el menú está visible */
+  .nav.visible ~ .open-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    pointer-events: none;
+  }
+
+  /* Asegurar que el botón de cerrar tenga el estilo correcto */
+  .close-menu {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .open-menu:hover,
+  .close-menu:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px) scale(1) !important;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .open-menu:active,
+  .close-menu:active {
+    transform: scale(0.95) !important;
   }
 
   nav {
@@ -25,124 +210,473 @@
     visibility: hidden;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
+    width: 100vw;
     height: 100vh;
-    background-color: #000000;
-    backdrop-filter: blur(5px);
-    padding: 2rem;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+    max-height: 100vh; /* Evitar que exceda la altura del viewport */
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(20, 20, 20, 0.98) 100%
+    );
+    backdrop-filter: blur(25px);
+    padding: 0; /* Eliminar padding que puede causar overflow */
+    margin: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateX(100%);
+    z-index: 1000;
+    overflow: hidden; /* Evitar cualquier scroll interno */
+    box-sizing: border-box; /* Incluir borders en el tamaño */
   }
 
   .nav.visible {
     opacity: 1;
     visibility: visible;
+    transform: translateX(0);
   }
 
   nav ul {
     flex-direction: column;
-    align-items: end;
-    height: 400px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    max-height: 80vh; /* Limitar la altura máxima */
+    gap: 1.5rem; /* Reducir el gap para evitar overflow */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Permitir scroll interno si es necesario */
+    flex-shrink: 0; /* Evitar que se comprima */
   }
 
   nav ul li {
-    margin: 1rem 0;
-    margin-top: 2em;
+    margin: 0;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+
+  .nav.visible nav ul li,
+  .nav.visible ul li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Animación escalonada para los elementos del menú */
+  .nav.visible ul li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .nav.visible ul li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .nav.visible ul li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .nav.visible ul li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  .nav.visible ul li:nth-child(5) {
+    transition-delay: 0.5s;
   }
 
   nav ul li a {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    text-align: center;
+    letter-spacing: 0.5px;
   }
-}
 
-@media screen and (max-width: 1200px) {
-  aside img {
-    width: 100px;
-    height: 100px;
+  nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  nav ul li a:hover::before {
+    left: 100%;
+  }
+
+  nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+  }
+
+  nav ul li a:active {
+    transform: translateY(-1px);
+  }
+
+  /* Animaciones para los iconos del menú */
+  .open-menu i {
+    transition: all 0.3s ease;
+  }
+
+  .close-menu i {
+    transition: all 0.3s ease;
+    transform: rotate(0deg);
+  }
+
+  .nav.visible ~ .open-menu i {
+    transform: rotate(90deg);
+  }
+
+  /* Efecto de pulsación suave en el botón */
+  .open-menu,
+  .close-menu {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes gentle-pulse {
+    0%,
+    100% {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  /* Evitar el scroll del body cuando el menú está abierto */
+  body.menu-open {
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+  }
+
+  /* Mejora para tablets y dispositivos medianos */
+  @media screen and (max-width: 768px) {
+    nav ul {
+      gap: 1.2rem; /* Reducir espacio entre elementos */
+      max-height: 75vh; /* Reducir altura máxima */
+    }
+
+    nav ul li a {
+      font-size: 1.4rem; /* Reducir tamaño de fuente */
+      padding: 10px 20px; /* Reducir padding */
+      min-width: 160px; /* Reducir ancho mínimo */
+    }
+
+    .open-menu,
+    .close-menu {
+      width: 45px;
+      height: 45px;
+      font-size: 1.6rem;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  /* Mejora para móviles pequeños */
+  @media screen and (max-width: 480px) {
+    /* Asegurar viewport sin overflow y prevenir doble scroll */
+    html {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      position: relative;
+    }
+
+    nav ul {
+      gap: 1rem; /* Espacio aún más reducido */
+      max-height: 70vh; /* Altura máxima más pequeña */
+    }
+
+    nav ul li a {
+      font-size: 1.2rem; /* Fuente más pequeña */
+      padding: 8px 16px; /* Padding reducido */
+      min-width: 140px; /* Ancho mínimo reducido */
+    }
+
+    .open-menu,
+    .close-menu {
+      width: 40px;
+      height: 40px;
+      font-size: 1.4rem;
+      top: 10px;
+      right: 10px;
+    }
+
+    nav ul {
+      gap: 1.5rem;
+    }
   }
 }
 
 @media screen and (max-width: 910px) {
+  header {
+    padding: 15px 20px;
+  }
+
   #my-name {
     display: none;
   }
 
   .open-info,
   .close-info {
-    display: block;
+    display: flex;
     cursor: pointer;
     border: 0;
-    font-size: 2.25rem;
-    background-color: transparent;
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px;
     cursor: pointer;
     color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .open-info:hover,
+  .close-info:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+  }
+
+  .open-info {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
   }
 
   aside {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 100vh;
+    padding: 80px 30px 30px 30px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(30px);
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
   }
 
-  .aside.visible {
+  aside.visible {
     opacity: 1;
     visibility: visible;
-    background-color: #000000;
+    transform: translateX(0);
+  }
+
+  .close-info {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  aside img {
+    width: 140px;
+    height: 140px;
+    margin: 40px 0 20px 0;
+  }
+
+  aside h1 {
+    font-size: 1.8rem;
+    margin: 20px 0;
+  }
+
+  .typed2 {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+
+  .cv-button {
+    width: 240px;
+    padding: 16px 28px;
+    font-size: 1.1rem;
+    margin-top: 30px;
   }
 
   main {
-    left: 10%;
-    top: 10vh;
+    left: 0;
+    width: 100%;
+    top: 70px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  section {
+    margin-top: 50px;
+  }
+
+  section h2 {
+    margin-top: 80px;
+  }
+
+  .terminal {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  #title-name {
+    text-align: center;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .projects {
-    width: 70%;
-    grid-template-columns: 80% 350% 50%;
+/* Tablet responsive - Solo estilos específicos para elementos no relacionados con layout principal */
+@media screen and (max-width: 1200px) and (min-width: 911px) {
+  .cv-button {
+    width: 180px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  aside img {
+    width: 140px;
+    height: 140px;
+  }
+
+  aside h1 {
+    font-size: 1.3rem;
+  }
+
+  .typed2 {
+    font-size: 1.1rem;
+  }
+
+  /* Projects slider responsive adjustments */
+  .projects-slider {
+    padding: 20px 10px;
+  }
+
+  .projects-container {
+    height: 450px;
   }
 
   .card-project {
-    margin-top: 50px;
-    width: 150%;
+    width: 280px;
+    height: 400px;
+  }
+
+  .card-project[data-index="1"] {
+    transform: translateX(40px) rotate(3deg) scale(0.95);
+  }
+
+  .card-project[data-index="2"] {
+    transform: translateX(80px) rotate(6deg) scale(0.9);
+  }
+
+  .card-project[data-index="3"] {
+    transform: translateX(120px) rotate(9deg) scale(0.85);
+  }
+
+  .card-project {
+    padding: 20px 15px;
+  }
+
+  .card-project h3 {
+    font-size: 1.5rem;
+  }
+
+  .card-project p {
+    font-size: 0.9rem;
+  }
+
+  .terminal {
+    width: 85%;
+    margin-left: 0;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .projects {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 50% 50%;
-    align-items: center;
-    transform: translateX(-50%);
+  /* Mobile projects slider */
+  .projects-container {
+    height: 400px;
   }
 
   .card-project {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-    width: 200%;
-    margin-top: 100px;
+    width: 250px;
+    height: 350px;
   }
 
-  #prev {
-    grid-row: 2;
-    grid-column: 1;
+  .card-project[data-index="1"] {
+    transform: translateX(30px) rotate(2deg) scale(0.95);
   }
 
-  #next {
-    grid-row: 2;
-    grid-column: 2;
-    transform: translateX(300%);
+  .card-project[data-index="2"] {
+    transform: translateX(60px) rotate(4deg) scale(0.9);
   }
 
-  #next,
-  #prev {
-    margin-top: 600px;
+  .card-project[data-index="3"] {
+    transform: translateX(90px) rotate(6deg) scale(0.85);
+  }
+
+  .card-project img {
+    height: 150px;
+  }
+
+  .card-project {
+    padding: 15px 10px;
+  }
+
+  .tech {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .project-link {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
+  .slider-dots {
+    gap: 10px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -222,5 +756,602 @@
 
   nav {
     overflow: scroll;
+  }
+}
+
+/* Mejora responsiva para la terminal */
+/* Rango problemático 910px - 1200px */
+@media (max-width: 1200px) and (min-width: 910px) {
+  /* Ajustes para el header */
+  header {
+    padding: 12px 25px;
+  }
+
+  .header-left {
+    gap: 12px;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+  header nav ul {
+    gap: 6px;
+  }
+
+  header nav ul li a {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+
+  /* Ajustes para el aside */
+  aside {
+    width: 260px;
+    padding: 70px 18px 25px 18px;
+  }
+
+  aside img {
+    width: 140px;
+    height: 140px;
+    margin: 25px 0 18px 0;
+  }
+
+  aside h1 {
+    font-size: 1.3rem;
+    margin: 12px 0;
+  }
+
+  .typed2 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .cv-button {
+    padding: 12px 20px;
+    width: 180px;
+    font-size: 0.95rem;
+    margin-top: 20px;
+  }
+
+  /* Ajustes para el main */
+  main {
+    width: calc(100% - 260px);
+    left: 260px;
+    padding: 25px 35px;
+  }
+
+  section {
+    margin-top: 120px;
+  }
+
+  section h2 {
+    font-size: 3.5em;
+    margin-top: 150px;
+  }
+
+  #title-name {
+    font-size: 3.5rem;
+  }
+
+  /* Ajustes específicos para la terminal */
+  .terminal {
+    width: 85%;
+    height: 210px;
+    margin-top: 18px;
+  }
+
+  .terminal-container {
+    font-size: 1.3rem;
+    padding: 20px 24px;
+    width: calc(100% - 48px);
+  }
+
+  .title-terminal {
+    height: 48px;
+    font-size: 0.8rem;
+  }
+
+  .title-terminal p {
+    font-size: 0.8rem;
+  }
+
+  .title-terminal::before {
+    left: 14px;
+    width: 19px;
+    height: 19px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 28px 0 0 0 #ffbd2e,
+      28px 0 0 1px rgba(0, 0, 0, 0.15), 56px 0 0 0 #28ca42,
+      56px 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .title-terminal::after {
+    left: 14px;
+    width: 19px;
+    height: 19px;
+    box-shadow: 28px 0 0 0 rgba(255, 255, 255, 0.3),
+      56px 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Ajustes para las tarjetas de tecnologías */
+  .card-technologie,
+  .card-skill {
+    width: 150px;
+    height: 190px;
+    padding: 22px 18px;
+    margin: 10px;
+  }
+
+  .card-technologie img,
+  .card-skill img {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 12px;
+  }
+
+  .card-technologie h3,
+  .card-skill h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Ajustes para los proyectos */
+  .projects-container {
+    height: 580px;
+  }
+
+  .card-project {
+    width: 320px;
+    height: 480px;
+    padding: 22px;
+  }
+
+  .card-project img {
+    height: 160px;
+  }
+
+  .card-project h3 {
+    font-size: 1.5rem;
+  }
+
+  .card-project p {
+    font-size: 0.9rem;
+  }
+
+  .card-project[data-index="1"] {
+    transform: translateX(55px) rotate(4deg) scale(0.95);
+  }
+
+  .card-project[data-index="2"] {
+    transform: translateX(110px) rotate(8deg) scale(0.9);
+  }
+
+  .card-project[data-index="3"] {
+    transform: translateX(165px) rotate(12deg) scale(0.85);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  .header-left {
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .terminal {
+    width: 95%;
+    height: 180px;
+    margin-top: 15px;
+  }
+
+  .terminal-container {
+    font-size: 1rem;
+    padding: 12px 15px;
+    width: calc(100% - 30px);
+    line-height: 1.3;
+  }
+
+  .title-terminal {
+    height: 40px;
+    font-size: 0.75rem;
+  }
+
+  .title-terminal::before {
+    left: 10px;
+    width: 14px;
+    height: 14px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 20px 0 0 0 #ffbd2e,
+      20px 0 0 1px rgba(0, 0, 0, 0.15), 40px 0 0 0 #28ca42,
+      40px 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .title-terminal::after {
+    left: 10px;
+    width: 14px;
+    height: 14px;
+    box-shadow: 20px 0 0 0 rgba(255, 255, 255, 0.3),
+      40px 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Mostrar título corto en móviles */
+  .terminal-title-full {
+    display: none;
+  }
+
+  .terminal-title-short {
+    display: block;
+    font-size: 0.7rem;
+  }
+}
+
+/* Tablet responsivo */
+@media (max-width: 909px) and (min-width: 769px) {
+  header {
+    padding: 12px 22px;
+  }
+
+  .header-left {
+    gap: 11px;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  .terminal {
+    width: 90%;
+    height: 200px;
+  }
+
+  .terminal-container {
+    font-size: 1.2rem;
+    padding: 18px 22px;
+    width: calc(100% - 44px);
+  }
+
+  .title-terminal {
+    height: 45px;
+  }
+
+  .title-terminal::before {
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 26px 0 0 0 #ffbd2e,
+      26px 0 0 1px rgba(0, 0, 0, 0.15), 52px 0 0 0 #28ca42,
+      52px 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .title-terminal::after {
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    box-shadow: 26px 0 0 0 rgba(255, 255, 255, 0.3),
+      52px 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Mostrar título corto en tablets */
+  .terminal-title-full {
+    display: none;
+  }
+
+  .terminal-title-short {
+    display: block;
+  }
+}
+
+/* Pantallas desktop medianas 1201px - 1399px */
+@media (max-width: 1399px) and (min-width: 1201px) {
+  .terminal {
+    width: 82%;
+    height: 225px;
+  }
+
+  .terminal-container {
+    font-size: 1.35rem;
+    padding: 22px 27px;
+    width: calc(100% - 54px);
+  }
+
+  .title-terminal {
+    height: 52px;
+  }
+
+  .title-terminal::before {
+    left: 16px;
+    width: 21px;
+    height: 21px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 31px 0 0 0 #ffbd2e,
+      31px 0 0 1px rgba(0, 0, 0, 0.15), 62px 0 0 0 #28ca42,
+      62px 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .title-terminal::after {
+    left: 16px;
+    width: 21px;
+    height: 21px;
+    box-shadow: 31px 0 0 0 rgba(255, 255, 255, 0.3),
+      62px 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+  header {
+    padding: 10px 15px;
+    height: 60px;
+  }
+
+  .header-left {
+    gap: 8px;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+  }
+
+  .open-info,
+  .open-menu {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  main {
+    top: 60px;
+    min-height: calc(100vh - 60px);
+  }
+
+  aside {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .terminal {
+    width: 98%;
+    height: 160px;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+
+  .title-terminal {
+    height: 35px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    font-size: 0.7rem;
+  }
+
+  .title-terminal::before {
+    left: 8px;
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 18px 0 0 0 #ffbd2e,
+      18px 0 0 1px rgba(0, 0, 0, 0.15), 36px 0 0 0 #28ca42,
+      36px 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .title-terminal::after {
+    left: 8px;
+    width: 12px;
+    height: 12px;
+    box-shadow: 18px 0 0 0 rgba(255, 255, 255, 0.3),
+      36px 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .terminal-container {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+    width: calc(100% - 24px);
+    line-height: 1.2;
+  }
+
+  /* Mostrar solo título corto en móviles pequeños */
+  .terminal-title-full {
+    display: none;
+  }
+
+  .terminal-title-short {
+    display: block;
+    font-size: 0.65rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 150px;
+  }
+}
+
+/* Pantallas extra grandes */
+@media (min-width: 1400px) {
+  .terminal {
+    width: 75%;
+    max-width: 900px;
+    height: 240px;
+  }
+
+  .terminal-container {
+    font-size: 1.5rem;
+    padding: 25px 30px;
+    width: calc(100% - 60px);
+  }
+
+  .title-terminal {
+    height: 55px;
+  }
+
+  .title-terminal::before {
+    left: 18px;
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 32px 0 0 0 #ffbd2e,
+      32px 0 0 1px rgba(0, 0, 0, 0.15), 64px 0 0 0 #28ca42,
+      64px 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .title-terminal::after {
+    left: 18px;
+    width: 22px;
+    height: 22px;
+    box-shadow: 32px 0 0 0 rgba(255, 255, 255, 0.3),
+      64px 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Mobile drag indicator */
+@media (max-width: 768px) {
+  .card-project.active::after {
+    content: "👆 Desliza";
+    font-size: 0.7rem;
+    padding: 4px 6px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-container {
+    height: 500px;
+  }
+
+  .card-project {
+    width: 280px;
+    height: 400px;
+  }
+
+  .card-project[data-index="1"] {
+    transform: translateX(40px) rotate(3deg) scale(0.95);
+  }
+
+  .card-project[data-index="2"] {
+    transform: translateX(80px) rotate(6deg) scale(0.9);
+  }
+
+  .card-project[data-index="3"] {
+    transform: translateX(120px) rotate(9deg) scale(0.85);
+  }
+}
+
+/* Responsive para el footer con estilo header */
+@media (max-width: 768px) {
+  footer {
+    padding: 12px 20px;
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .footer-link {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .footer-copyright {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 10px 15px;
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+  }
+
+  .footer-content {
+    gap: 10px;
+  }
+
+  .footer-nav {
+    gap: 4px;
+  }
+
+  .footer-link {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.9rem;
+  }
+}
+
+/* Asegurar que el menú cubra toda la pantalla */
+@media (max-width: 940px) {
+  nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+  }
+}
+
+/* Asegurar que el nav sea visible en desktop */
+@media (min-width: 941px) {
+  .open-menu,
+  .close-menu {
+    display: none !important;
+  }
+
+  nav {
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  nav ul {
+    flex-direction: row !important;
+    gap: 8px !important;
+  }
+
+  nav ul li {
+    transform: none !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Estilos para móvil - scroll más delgado */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  aside::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  main::-webkit-scrollbar {
+    width: 5px;
   }
 }
