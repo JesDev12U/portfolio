@@ -26,6 +26,23 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto; /* Solo scroll vertical del body */
+  background: black; /* Fallback background */
+}
+
+/* ===== MATRIX BACKGROUND CANVAS ===== */
+#matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+  background: black;
+  pointer-events: none; /* No interfiere con la interacción del usuario */
+  will-change: auto; /* Evita problemas de rendering */
+  transform: translateZ(0); /* Fuerza aceleración de hardware */
+  backface-visibility: hidden; /* Optimización para animaciones */
 }
 
 /* ===== EFECTO DE CURSOR CON BINARIOS ===== */
@@ -97,6 +114,7 @@ section {
   position: fixed;
   z-index: -1;
   top: 0;
+  display: none; /* Ocultamos particles para mostrar Matrix */
 }
 
 header {
