@@ -30,8 +30,9 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about-me">Acerca de mí</a></li>
+          <li><a href="#experience">Experiencia</a></li>
           <li><a href="#technologies">Tecnologías</a></li>
-          <li><a href="#projects">Mis proyectos destacados</a></li>
+          <li><a href="#projects">Proyectos personales</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
@@ -42,12 +43,12 @@
       <h1>Jesus Antonio Lopez Bandala</h1>
       <p><span class="typed2"></span></p>
       <a
-        href="https://docs.google.com/document/d/1itxllgDp-G7XuR3f_-_GeJkAEsRgiI6f/edit"
-        target="_blank"
+        href="./cv.pdf"
+        download="CV_JesusAntonio_LopezBandala.pdf"
         class="cv-button"
       >
         <i class="fas fa-download"></i>
-        Ver mi CV
+        Descargar CV
       </a>
     </aside>
     <span id="home"></span>
@@ -72,241 +73,517 @@
       </div>
       <section id="about-me">
         <h2>Acerca de mí</h2>
-        <p style="padding: 30px; font-size: 2em">
-          Soy estudiante de séptimo semestre en Ingeniería en Informática,
-          carrera que se imparte en IPN UPIICSA, también soy Técnico en
-          Informática (titulado) por parte del CECyT 12 IPN. Soy apasionado en
-          toda la área de desarrollo y de sistemas operativos, capaz de
-          desarrollar aplicaciones web, aplicaciones móviles, montar servidores
-          y muchas cosas más relacionadas con TI. Esta página muestra algunos de
-          mis proyectos destacados, ¡Espero les guste!
-        </p>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Soy estudiante de séptimo semestre en
+              <strong>Ingeniería en Informática</strong> en IPN UPIICSA, también
+              soy <strong>Técnico en Informática</strong> (titulado) por parte
+              del CECyT 12 IPN.
+            </p>
+            <p>
+              Soy apasionado en toda la área de desarrollo y de sistemas
+              operativos, capaz de desarrollar aplicaciones web, aplicaciones
+              móviles, montar servidores y muchas cosas más relacionadas con TI.
+            </p>
+            <p>
+              Actualmente trabajo como
+              <strong>becario fullstack en EMTIX</strong>, una consultoría donde
+              aplico mis conocimientos y aprendo nuevas tecnologías día a día.
+              Esta página muestra algunos de mis proyectos destacados, ¡Espero
+              les guste!
+            </p>
+          </div>
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <i class="fas fa-graduation-cap"></i>
+              <h4>Estudiante IPN</h4>
+              <p>7º semestre</p>
+            </div>
+            <div class="highlight-card">
+              <i class="fas fa-code"></i>
+              <h4>Desarrollador</h4>
+              <p>Fullstack</p>
+            </div>
+            <div class="highlight-card">
+              <i class="fas fa-laptop-code"></i>
+              <h4>Apasionado TI</h4>
+              <p>Siempre aprendiendo</p>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <section id="experience">
+        <h2>Experiencia Laboral</h2>
+        <div class="experience-container">
+          <div class="experience-card-modern">
+            <!-- Header compacto -->
+            <div class="exp-header">
+              <div class="exp-title-wrapper">
+                <div class="exp-company-badge">
+                  <i class="fas fa-building"></i>
+                </div>
+                <div class="exp-title-info">
+                  <h3 class="exp-role">Becario FullStack</h3>
+                  <h4 class="exp-company">Consultoría EMTIX</h4>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-date"><i class="far fa-calendar"></i> Jul 2025 – Presente</span>
+                <span class="exp-location"><i class="fas fa-map-marker-alt"></i> CDMX, México</span>
+              </div>
+            </div>
+
+            <!-- Proyectos en grid compacto -->
+            <div class="exp-projects">
+              <div class="exp-project-item">
+                <div class="project-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="project-content">
+                  <h5>Seguridad Pública (C4 Benito Juárez)</h5>
+                  <p>Desarrollo de SPA para gestión de videovigilancia utilizada por personal de seguridad pública, implementando dashboards interactivos y optimizando flujos UX/UI.</p>
+                  <div class="project-techs">
+                    <span>Next.js</span>
+                    <span>HeroUI</span>
+                    <span>Supabase</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-project-item">
+                <div class="project-icon">
+                  <i class="fas fa-plane"></i>
+                </div>
+                <div class="project-content">
+                  <h5>Plataforma agencia de viajes Golden Maya</h5>
+                  <p>Liderazgo en diseño y desarrollo de sistema de itinerarios, cotizaciones y tickets. Integración de chatbot (OpenAI API) y motor de generación de PDFs (Puppeteer, React.js).</p>
+                  <div class="project-techs">
+                    <span>Next.js</span>
+                    <span>HeroUI</span>
+                    <span>Supabase</span>
+                    <span>OpenAI API</span>
+                    <span>Puppeteer</span>
+                    <span>React.js</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-project-item">
+                <div class="project-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="project-content">
+                  <h5>Desarrollo Web & CMS</h5>
+                  <p>Creación de landings optimizadas con Next.js y desarrollo del sitio corporativo (emtix.dev) utilizando Astro.js y DecapCMS.</p>
+                  <div class="project-techs">
+                    <span>Next.js</span>
+                    <span>Astro.js</span>
+                    <span>DecapCMS</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-project-item">
+                <div class="project-icon">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-content">
+                  <h5>Automatización</h5>
+                  <p>Desarrollo de bots transaccionales para Telegram y WhatsApp (EvolutionAPI) para cotizaciones automáticas y recordatorios.</p>
+                  <div class="project-techs">
+                    <span>Telegram</span>
+                    <span>WhatsApp</span>
+                    <span>EvolutionAPI</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-project-item">
+                <div class="project-icon">
+                  <i class="fas fa-server"></i>
+                </div>
+                <div class="project-content">
+                  <h5>Infraestructura</h5>
+                  <p>Administración de servidor VPS Debian (Hostinger), gestionando despliegues vía SSH y mantenimiento del sistema.</p>
+                  <div class="project-techs">
+                    <span>VPS Debian</span>
+                    <span>Hostinger</span>
+                    <span>SSH</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="technologies">
         <h2>Tecnologías</h2>
         <h3>Experiencia en</h3>
         <div class="technologies">
           <div class="card-technologie">
-            <img src="./img/html.png" alt="HTML" />
+            <img
+              src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png"
+              alt="HTML"
+            />
             <h3>HTML</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/css.png" alt="CSS" />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/1280px-Official_CSS_Logo.svg.png"
+              alt="CSS"
+            />
             <h3>CSS</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/javascript.png" alt="Javascript" />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png"
+              alt="Tailwind CSS"
+            />
+            <h3>Tailwind CSS</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+              alt="Javascript"
+            />
             <h3>Javascript</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/typescript.svg" alt="Javascript" />
+            <img
+              src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg"
+              alt="TypeScript"
+            />
             <h3>TypeScript</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/nodejs.svg" alt="Javascript" />
-            <h3>NodeJS</h3>
-          </div>
-          ç
-          <div class="card-technologie">
-            <img src="./img/php.png" alt="PHP" />
-            <h3>PHP</h3>
+            <img
+              src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg"
+              alt="Node.js"
+            />
+            <h3>Node.js</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/composer.png" alt="PHP" />
-            <h3>Composer</h3>
+            <img
+              src="https://www.svgrepo.com/show/373446/astro.svg"
+              alt="Astro.js"
+            />
+            <h3>Astro.js</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/c.png" alt="C" />
-            <h3>C</h3>
+            <img
+              src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg"
+              alt="Vue.js"
+            />
+            <h3>Vue.js</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/cpp.png" alt="C++" />
-            <h3>C++</h3>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
+              alt="React.js"
+            />
+            <h3>React.js</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/java.webp" alt="Java" />
-            <h3>Java</h3>
+            <img
+              src="https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png"
+              alt="Next.js"
+            />
+            <h3>Next.js</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/python.png" alt="Python" />
-            <h3>Python</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/django.svg" alt="Django" />
-            <h3>Django</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/flask.svg" alt="Flask" />
-            <h3>Flask</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/firebase.svg" alt="MySQL" />
-            <h3>Firebase</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/mysql.webp" alt="MySQL" />
-            <h3>MySQL</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/sqlite.svg" alt="MySQL" />
-            <h3>SQLite</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/git.svg" alt="Git" />
-            <h3>Git</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/github.png" alt="GitHub" />
-            <h3>GitHub</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/Tux.png" alt="Linux" />
-            <h3>Linux</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/bash.png" alt="Bash" />
-            <h3>Bash</h3>
-          </div>
-        </div>
-        <h3>Aprendiendo</h3>
-        <div class="technologies">
-          <div class="card-technologie">
-            <img src="./img/react.png" alt="React.js" />
-            <h3>ReactJS</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/next.png" alt="NextJS" />
-            <h3>NextJS</h3>
-          </div>
-          <div class="card-technologie">
-            <img src="./img/heroui.png" alt="HeroUI" />
+            <img
+              src="https://cdn-1.webcatalog.io/catalog/heroui/heroui-icon-filled-256.png?v=1747111349810"
+              alt="HeroUI"
+            />
             <h3>HeroUI</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/supabase.png" alt="Supabase" />
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+              alt="PHP"
+            />
+            <h3>PHP</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://getcomposer.org/img/logo-composer-transparent4.png"
+              alt="Composer"
+            />
+            <h3>Composer</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://images.icon-icons.com/2699/PNG/512/nginx_logo_icon_169915.png"
+              alt="Nginx"
+            />
+            <h3>Nginx</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://images.seeklogo.com/logo-png/31/2/apache-logo-png_seeklogo-314278.png"
+              alt="Apache"
+            />
+            <h3>Apache</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/pm2-icon-de2tnxlx7mpm39v66kkhc9.png/pm2-icon-j1kc5wcz2f8itsbu1k1ey.png?_a=DATAg1AAZAA0"
+              alt="PM2"
+            />
+            <h3>PM2</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
+              alt="C"
+            />
+            <h3>C</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
+              alt="C++"
+            />
+            <h3>C++</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+              alt="Java"
+            />
+            <h3>Java</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://framerusercontent.com/images/Bo0cEQhCtGuZyzCzyQDCgfcQmg.png"
+              alt="Kotlin"
+            />
+            <h3>Kotlin</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+              alt="Python"
+            />
+            <h3>Python</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://cdn.worldvectorlogo.com/logos/django.svg"
+              alt="Django"
+            />
+            <h3>Django</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://www.vectorlogo.zone/logos/palletsprojects_flask/palletsprojects_flask-icon.svg"
+              alt="Flask"
+            />
+            <h3>Flask</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
+              alt="Firebase"
+            />
+            <h3>Firebase</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://images.icon-icons.com/2699/PNG/512/mysql_logo_icon_169940.png"
+              alt="MySQL"
+            />
+            <h3>MySQL</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg"
+              alt="SQLite"
+            />
+            <h3>SQLite</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://cdn.prod.website-files.com/655b60964be1a1b36c746790/655b60964be1a1b36c746d41_646dfce3b9c4849f6e401bff_supabase-logo-icon_1.png"
+              alt="Supabase"
+            />
             <h3>Supabase</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/vuejs.svg" alt="Javascript" />
-            <h3>VueJS</h3>
+            <img
+              src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
+              alt="Git"
+            />
+            <h3>Git</h3>
           </div>
           <div class="card-technologie">
-            <img src="./img/kotlin.avif" alt="Kotlin" />
-            <h3>Kotlin</h3>
+            <img
+              src="https://cdn-1.webcatalog.io/catalog/github/github-icon-filled-256.png?v=1753662983890"
+              alt="GitHub"
+            />
+            <h3>GitHub</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
+              alt="Linux"
+            />
+            <h3>Linux</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://portfolio-jesdev12us-projects.vercel.app/img/bash.png"
+              alt="Bash"
+            />
+            <h3>Bash</h3>
+          </div>
+          <div class="card-technologie">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Docker-svgrepo-com.svg/2048px-Docker-svgrepo-com.svg.png"
+              alt="Docker"
+            />
+            <h3>Docker</h3>
           </div>
         </div>
       </section>
       <section id="projects">
-        <h2>Mis proyectos destacados</h2>
+        <h2>Mis proyectos personales</h2>
         <h3>Arrastra las cards para visualizar los proyectos</h3>
         <div class="projects-slider">
           <div class="projects-container">
             <div class="card-project" data-index="0">
-              <img src="./img/project1.jpeg" alt="Project 1" />
-              <h3>Condominios</h3>
-              <p>
-                Sistema completo de gestión para condominios con funcionalidades
-                de administración, reportes y control de residentes.
-              </p>
-              <div class="tech-stack">
-                <span class="tech">HTML</span>
-                <span class="tech">CSS</span>
-                <span class="tech">JavaScript</span>
-                <span class="tech">PHP</span>
+              <div class="card-project-image-container">
+                <img src="./img/project1.jpeg" alt="Project 1" />
               </div>
-              <a
-                href="https://github.com/JesDev12U/condominios"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fab fa-github"></i>
-                Ver en GitHub
-              </a>
+              <div class="card-project-content">
+                <h3>Condominios</h3>
+                <p>
+                  Sistema completo de gestión para condominios con
+                  funcionalidades de administración, reportes y control de
+                  residentes.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech">HTML</span>
+                  <span class="tech">CSS</span>
+                  <span class="tech">JavaScript</span>
+                  <span class="tech">PHP</span>
+                </div>
+                <a
+                  href="https://github.com/JesDev12U/condominios"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  Ver en GitHub
+                </a>
+              </div>
             </div>
             <div class="card-project" data-index="1">
-              <img src="./img/project2.png" alt="Project 2" />
-              <h3>Checkpoint</h3>
-              <p>
-                Plataforma e-commerce especializada en videojuegos con carrito
-                de compras, gestión de inventario y sistema de pagos.
-              </p>
-              <div class="tech-stack">
-                <span class="tech">HTML</span>
-                <span class="tech">CSS</span>
-                <span class="tech">JavaScript</span>
-                <span class="tech">PHP</span>
+              <div class="card-project-image-container">
+                <img src="./img/project2.png" alt="Project 2" />
               </div>
-              <a
-                href="https://github.com/JesDev12U/checkpoint"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fab fa-github"></i>
-                Ver en GitHub
-              </a>
+              <div class="card-project-content">
+                <h3>Checkpoint</h3>
+                <p>
+                  Plataforma e-commerce especializada en videojuegos con carrito
+                  de compras, gestión de inventario y sistema de pagos.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech">HTML</span>
+                  <span class="tech">CSS</span>
+                  <span class="tech">JavaScript</span>
+                  <span class="tech">PHP</span>
+                </div>
+                <a
+                  href="https://github.com/JesDev12U/checkpoint"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  Ver en GitHub
+                </a>
+              </div>
             </div>
             <div class="card-project" data-index="2">
-              <img src="./img/project3.jpeg" alt="Project 3" />
-              <h3>Vocafe 12</h3>
-              <p>
-                App móvil nativa para Android que permite ordenar y gestionar
-                pedidos de la cafetería escolar con interfaz intuitiva.
-              </p>
-              <div class="tech-stack">
-                <span class="tech">Java</span>
-                <span class="tech">Android</span>
-                <span class="tech">MySQL</span>
+              <div class="card-project-image-container">
+                <img src="./img/project3.jpeg" alt="Project 3" />
               </div>
-              <a
-                href="https://github.com/JesDev12U/vocafe12"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fab fa-github"></i>
-                Ver en GitHub
-              </a>
+              <div class="card-project-content">
+                <h3>Vocafe 12</h3>
+                <p>
+                  App móvil nativa para Android que permite ordenar y gestionar
+                  pedidos de la cafetería escolar con interfaz intuitiva.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech">Java</span>
+                  <span class="tech">Android</span>
+                  <span class="tech">MySQL</span>
+                </div>
+                <a
+                  href="https://github.com/JesDev12U/vocafe12"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  Ver en GitHub
+                </a>
+              </div>
             </div>
             <div class="card-project" data-index="3">
-              <img src="./img/project4.png" alt="Project 4" />
-              <h3>Huffman</h3>
-              <p>
-                Implementación del algoritmo de compresión Huffman con interfaz
-                web para comprimir y descomprimir archivos eficientemente.
-              </p>
-              <div class="tech-stack">
-                <span class="tech">C++</span>
-                <span class="tech">Python</span>
-                <span class="tech">Flask</span>
+              <div class="card-project-image-container">
+                <img src="./img/project4.png" alt="Project 4" />
               </div>
-              <a
-                href="https://github.com/JesDev12U/huffman-algorithm"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fab fa-github"></i>
-                Ver en GitHub
-              </a>
+              <div class="card-project-content">
+                <h3>Huffman</h3>
+                <p>
+                  Implementación del algoritmo de compresión Huffman con
+                  interfaz web para comprimir y descomprimir archivos
+                  eficientemente.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech">C++</span>
+                  <span class="tech">Python</span>
+                  <span class="tech">Flask</span>
+                </div>
+                <a
+                  href="https://github.com/JesDev12U/huffman-algorithm"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  Ver en GitHub
+                </a>
+              </div>
             </div>
             <div class="card-project" data-index="4">
-              <img src="./img/horarios-saes.png" alt="Project 5" />
-              <h3>Horarios SAES</h3>
-              <p>
-                Extensión para navegadores basados en Chrome para el sitio web
-                SAES IPN, el cual ordena los horarios de los alumnos haciéndolos
-                ver más ordenados y limpios
-              </p>
-              <div class="tech-stack">
-                <span class="tech">JavaScript</span>
-                <span class="tech">CSS</span>
+              <div class="card-project-image-container">
+                <img src="./img/horarios-saes.png" alt="Project 5" />
               </div>
-              <a
-                href="https://github.com/JesDev12U/horarios-saes"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fab fa-github"></i>
-                Ver en GitHub
-              </a>
+              <div class="card-project-content">
+                <h3>Horarios SAES</h3>
+                <p>
+                  Extensión para navegadores basados en Chrome para el sitio web
+                  SAES IPN, el cual ordena los horarios de los alumnos
+                  haciéndolos ver más ordenados y limpios.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech">JavaScript</span>
+                  <span class="tech">CSS</span>
+                </div>
+                <a
+                  href="https://github.com/JesDev12U/horarios-saes"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  Ver en GitHub
+                </a>
+              </div>
             </div>
           </div>
           <div class="slider-dots">
@@ -324,7 +601,7 @@
         <div class="wrapper">
           <div class="button">
             <a
-              href="https://www.facebook.com/jesusantonio.lopezbandala.7/"
+              href="https://facebook.com/jesusantonio.lopezbandala.7"
               target="_blank"
             >
               <div class="icon"><i class="fab fa-facebook-f"></i></div>
@@ -332,15 +609,21 @@
             </a>
           </div>
           <div class="button">
-            <a href="https://www.linkedin.com/in/jalb12u/" target="_blank">
+            <a href="https://www.linkedin.com/in/jesdev12u/" target="_blank">
               <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
-              <span>Linkedin</span>
+              <span>LinkedIn</span>
             </a>
           </div>
           <div class="button">
-            <a href="https://www.instagram.com/jesdev12u/" target="_blank">
+            <a href="https://instagram.com/jesdev12u" target="_blank">
               <div class="icon"><i class="fab fa-instagram"></i></div>
               <span>Instagram</span>
+            </a>
+          </div>
+          <div class="button">
+            <a href="https://tiktok.com/@jesdev12u" target="_blank">
+              <div class="icon"><i class="fab fa-tiktok"></i></div>
+              <span>TikTok</span>
             </a>
           </div>
           <div class="button">
@@ -369,6 +652,7 @@
           <ul class="footer-nav">
             <li><a href="#home" class="footer-link">Inicio</a></li>
             <li><a href="#about-me" class="footer-link">Acerca</a></li>
+            <li><a href="#experience" class="footer-link">Experiencia</a></li>
             <li><a href="#projects" class="footer-link">Proyectos</a></li>
             <li><a href="#contact" class="footer-link">Contacto</a></li>
           </ul>

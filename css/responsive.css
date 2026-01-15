@@ -599,6 +599,15 @@
     height: 400px;
   }
 
+  .card-project-image-container {
+    height: 170px;
+  }
+
+  .card-project img {
+    height: 100%;
+    object-fit: cover;
+  }
+
   .card-project[data-index="1"] {
     transform: translateX(40px) rotate(3deg) scale(0.95);
   }
@@ -640,6 +649,15 @@
     height: 350px;
   }
 
+  .card-project-image-container {
+    height: 150px;
+  }
+
+  .card-project img {
+    height: 100%;
+    object-fit: cover;
+  }
+
   .card-project[data-index="1"] {
     transform: translateX(30px) rotate(2deg) scale(0.95);
   }
@@ -650,10 +668,6 @@
 
   .card-project[data-index="3"] {
     transform: translateX(90px) rotate(6deg) scale(0.85);
-  }
-
-  .card-project img {
-    height: 150px;
   }
 
   .card-project {
@@ -903,8 +917,13 @@
     padding: 22px;
   }
 
+  .card-project-image-container {
+    height: 180px;
+  }
+
   .card-project img {
-    height: 160px;
+    height: 100%;
+    object-fit: cover;
   }
 
   .card-project h3 {
@@ -1353,5 +1372,258 @@
 
   main::-webkit-scrollbar {
     width: 5px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - EXPERIENCE SECTION
+   ============================================ */
+
+/* ============================================
+   RESPONSIVE - ABOUT ME SECTION
+   ============================================ */
+
+@media screen and (max-width: 940px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-highlights {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .highlight-card {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #about-me {
+    padding: 30px 15px;
+  }
+
+  .about-text {
+    padding: 25px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .about-highlights {
+    gap: 15px;
+  }
+
+  .highlight-card {
+    padding: 20px;
+    min-width: 120px;
+  }
+
+  .highlight-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .highlight-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .highlight-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets y pantallas medianas */
+@media screen and (max-width: 940px) {
+  .experience-timeline::before {
+    left: 30px;
+  }
+
+  .timeline-dot {
+    left: 30px;
+    transform: translateX(-50%);
+  }
+
+  .timeline-content {
+    width: calc(100% - 80px);
+    margin-left: 80px !important;
+    padding: 0 15px;
+  }
+
+  .experience-card {
+    padding: 25px;
+  }
+
+  .experience-header {
+    gap: 15px;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .job-title {
+    font-size: 1.3rem;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+  }
+
+  #experience h2 {
+    font-size: 2.8em;
+  }
+}
+
+/* Móviles */
+@media screen and (max-width: 600px) {
+  #experience {
+    padding: 40px 10px;
+  }
+
+  #experience h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+
+  .experience-timeline {
+    padding: 20px 0;
+  }
+
+  .experience-timeline::before {
+    left: 20px;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.9);
+  }
+
+  .timeline-item {
+    margin-bottom: 50px;
+  }
+
+  .timeline-content {
+    width: calc(100% - 60px);
+    margin-left: 60px !important;
+    padding: 0 10px;
+  }
+
+  .experience-card {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .company-logo {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .job-title {
+    font-size: 1.2rem;
+  }
+
+  .company-name {
+    font-size: 1rem;
+  }
+
+  .experience-period {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .experience-period i {
+    font-size: 0.9rem;
+  }
+
+  .experience-period span {
+    font-size: 0.9rem;
+  }
+
+  .experience-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .project-list li {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  .project-list li::before {
+    font-size: 1.1rem;
+  }
+
+  .skill-tag {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .future-card {
+    padding: 30px 20px;
+  }
+
+  .future-icon {
+    font-size: 2.5rem;
+  }
+
+  .future-title {
+    font-size: 1.2rem;
+  }
+
+  .future-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media screen and (max-width: 380px) {
+  #experience h2 {
+    font-size: 1.8em;
+  }
+
+  .timeline-content {
+    width: calc(100% - 50px);
+    margin-left: 50px !important;
+  }
+
+  .experience-card {
+    padding: 15px;
+  }
+
+  .job-title {
+    font-size: 1.1rem;
+  }
+
+  .company-name {
+    font-size: 0.95rem;
+  }
+
+  .experience-skills {
+    gap: 8px;
+  }
+
+  .skill-tag {
+    padding: 5px 10px;
+    font-size: 0.8rem;
   }
 }
