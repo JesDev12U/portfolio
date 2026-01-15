@@ -494,10 +494,41 @@ section.visible {
 }
 
 section h2 {
-  font-size: 4em;
+  font-size: 4rem;
   font-weight: 600;
   margin-bottom: 20px;
   margin-top: 200px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 25px;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  border-radius: 2px;
+}
+
+/* Descripción de sección (texto explicativo) */
+.section-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  max-width: 600px;
 }
 
 /* ============================================
@@ -944,6 +975,22 @@ section h3::after {
 .card-technologie:hover h3,
 .card-skill:hover h3 {
   color: #ffffff;
+}
+
+/* Projects Section */
+#projects {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#projects h2,
+#projects h3 {
+  text-align: center;
+  width: 100%;
 }
 
 /* Projects Slider - Card Game Style */
@@ -1788,23 +1835,6 @@ body.menu-open {
   position: relative;
   display: inline-block;
   width: 100%;
-}
-
-#experience h2::after {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  border-radius: 2px;
 }
 
 /* Contenedor principal */

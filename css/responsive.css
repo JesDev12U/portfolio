@@ -571,6 +571,7 @@
 
   section h2 {
     margin-top: 80px;
+    font-size: 2rem;
   }
 
   .terminal {
@@ -660,16 +661,16 @@
 @media screen and (max-width: 700px) {
   /* Mobile projects slider */
   .projects-container {
-    height: 400px;
+    height: 380px;
   }
 
   .card-project {
-    width: 250px;
-    height: 350px;
+    width: 230px;
+    height: 330px;
   }
 
   .card-project-image-container {
-    height: 150px;
+    height: 130px;
   }
 
   .card-project img {
@@ -729,10 +730,6 @@
 }
 
 @media screen and (max-width: 465px) {
-  #technologies h2 {
-    font-size: 2rem;
-  }
-
   #technologies h3 {
     font-size: 1.4rem;
   }
@@ -748,22 +745,22 @@
 
   .card-technologie,
   .card-skill {
-    width: 120px;
-    height: 160px;
-    padding: 15px 10px;
-    margin: 8px;
+    width: 95px;
+    height: 130px;
+    padding: 12px 8px;
+    margin: 6px;
   }
 
   .card-technologie img,
   .card-skill img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
   }
 
   .card-technologie h3,
   .card-skill h3 {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   /* Ajustes para la experiencia en móviles */
@@ -848,10 +845,6 @@
   }
 
   /* Ajustes adicionales para tecnologías */
-  #technologies h2 {
-    font-size: 1.9rem;
-  }
-
   #technologies h3 {
     font-size: 1.3rem;
   }
@@ -865,11 +858,6 @@
     align-items: center;
     width: 100%;
     padding: 20px 10px;
-  }
-
-  #technologies h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
   }
 
   #technologies h3 {
@@ -891,22 +879,22 @@
   .card-technologie,
   .card-skill {
     display: flex !important;
-    width: 110px;
-    height: 150px;
-    padding: 12px 8px;
-    margin: 6px;
+    width: 90px;
+    height: 125px;
+    padding: 10px 6px;
+    margin: 5px;
   }
 
   .card-technologie img,
   .card-skill img {
-    width: 55px;
-    height: 55px;
-    margin-bottom: 8px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 6px;
   }
 
   .card-technologie h3,
   .card-skill h3 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -1008,11 +996,6 @@
   }
 
   /* Ajustes para títulos de tecnologías en pantallas muy pequeñas */
-  #technologies h2 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-  }
-
   #technologies h3 {
     font-size: 1.2rem;
     margin-top: 25px;
@@ -1157,7 +1140,7 @@
   }
 
   section h2 {
-    font-size: 3.5em;
+    font-size: 3.5rem;
     margin-top: 150px;
   }
 
@@ -1592,20 +1575,20 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .projects-container {
-    height: 500px;
+    height: 450px;
   }
 
   .card-project {
-    width: 280px;
-    height: 400px;
+    width: 260px;
+    height: 370px;
   }
 
   .card-project[data-index="1"] {
-    transform: translateX(40px) rotate(3deg) scale(0.95);
+    transform: translateX(35px) rotate(3deg) scale(0.95);
   }
 
   .card-project[data-index="2"] {
-    transform: translateX(80px) rotate(6deg) scale(0.9);
+    transform: translateX(70px) rotate(6deg) scale(0.9);
   }
 
   .card-project[data-index="3"] {
@@ -2056,20 +2039,101 @@
 
   .card-technologie,
   .card-skill {
-    width: 100px;
-    height: 140px;
+    width: 85px;
+    height: 120px;
     padding: 10px 5px;
-    margin: 5px;
+    margin: 4px;
   }
 
   .card-technologie img,
   .card-skill img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
 
   .card-technologie h3,
   .card-skill h3 {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== MEJORAS PARA DISPOSITIVOS TÁCTILES ===== */
+/* Desactivar efectos hover en dispositivos táctiles para mejor UX en scroll */
+@media (hover: none) and (pointer: coarse) {
+  /* Desactivar transformaciones hover en cards de tecnologías */
+  .card-technologie:hover,
+  .card-skill:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: none;
+  }
+
+  .card-technologie:hover::before,
+  .card-skill:hover::before {
+    left: -100%; /* Evitar el efecto de brillo */
+  }
+
+  .card-technologie:hover img,
+  .card-skill:hover img {
+    transform: none;
+    filter: none;
+  }
+
+  .card-technologie:hover h3,
+  .card-skill:hover h3 {
+    transform: none;
+    color: inherit;
+  }
+
+  /* Desactivar efectos hover en cards de proyectos */
+  .card-project:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  .card-project:hover::before {
+    left: -100%; /* Evitar el efecto de brillo */
+  }
+
+  .card-project:hover img {
+    transform: none;
+  }
+
+  /* Desactivar efectos hover en cards de experiencia */
+  .experience-card-modern:hover {
+    transform: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Desactivar efectos hover en botones dentro de cards */
+  .project-link:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Mantener scroll suave sin interferencias */
+  .card-technologie,
+  .card-skill,
+  .card-project,
+  .experience-card-modern {
+    transition: none; /* Eliminar transiciones que interfieren con el scroll */
+    touch-action: pan-y; /* Permitir solo scroll vertical */
+  }
+
+  /* Para asegurar que los enlaces y botones sigan siendo clicables */
+  a,
+  button {
+    touch-action: manipulation; /* Evitar el delay de 300ms en dispositivos móviles */
+  }
+}
+
+/* Prevenir comportamiento de hover "pegajoso" en tablets con touch */
+@media (hover: hover) and (pointer: coarse) {
+  .card-technologie,
+  .card-skill,
+  .card-project {
+    transition-duration: 0.15s; /* Transiciones más rápidas para tablets */
   }
 }
