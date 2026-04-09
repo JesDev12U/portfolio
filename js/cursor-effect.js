@@ -1,55 +1,34 @@
-// Efecto de binarios siguiendo el cursor
+// Efecto de cursor estilo coordenadas (líneas verticales y horizontales)
 class CursorEffect {
   constructor() {
-    this.particles = [];
-    this.maxParticles = 15;
     this.init();
   }
 
   init() {
+    this.createCrosshair();
+
     // Event listener para el movimiento del mouse
     document.addEventListener("mousemove", (e) => {
-      this.createParticle(e);
+      this.updateCrosshair(e);
     });
   }
 
-  createParticle(e) {
-    // Limitar el número de partículas
-    if (this.particles.length > this.maxParticles) {
-      const oldParticle = this.particles.shift();
-      if (oldParticle && oldParticle.parentNode) {
-        oldParticle.parentNode.removeChild(oldParticle);
-      }
-    }
+  createCrosshair() {
+    this.lineX = document.createElement("div");
+    this.lineX.className = "cursor-crosshair cursor-crosshair-x";
 
-    const particle = document.createElement("div");
-    particle.className = "cursor-particle";
+    this.lineY = document.createElement("div");
+    this.lineY.className = "cursor-crosshair cursor-crosshair-y";
 
-    // Números binarios aleatorios (0 o 1) con algunos caracteres especiales
-    const chars = ["0", "1", "0", "1", "0", "1", "01", "10"];
-    const binary = chars[Math.floor(Math.random() * chars.length)];
-    particle.textContent = binary;
+    document.body.appendChild(this.lineX);
+    document.body.appendChild(this.lineY);
+  }
 
-    // Posicionar en la ubicación del cursor
-    particle.style.left = e.clientX + "px";
-    particle.style.top = e.clientY + "px";
-
-    // Variación aleatoria en el desplazamiento
-    const randomX = (Math.random() - 0.5) * 40;
-    const randomY = (Math.random() - 0.5) * 40;
-    particle.style.setProperty("--random-x", randomX + "px");
-    particle.style.setProperty("--random-y", randomY + "px");
-
-    document.body.appendChild(particle);
-    this.particles.push(particle);
-
-    // Remover después de la animación
-    setTimeout(() => {
-      if (particle.parentNode) {
-        particle.parentNode.removeChild(particle);
-        this.particles = this.particles.filter((p) => p !== particle);
-      }
-    }, 1000);
+  updateCrosshair(e) {
+    // Actualizar posición de las líneas
+    // Usamos transform para mejor rendimiento
+    this.lineY.style.transform = `translateX(${e.clientX}px)`;
+    this.lineX.style.transform = `translateY(${e.clientY}px)`;
   }
 }
 

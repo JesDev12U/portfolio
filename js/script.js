@@ -74,12 +74,17 @@ class ProjectSlider {
   }
 
   getCardTransform(index) {
+    const isMobile = window.innerWidth <= 600;
+    const baseTranslateX = isMobile ? 18 : 30;
+    const baseTranslateY = isMobile ? 6 : 10;
+    const baseRotation = isMobile ? 2 : 3;
+
     const offset = index - this.currentIndex;
     const scale = index === this.currentIndex ? 1 : 0.8;
     const zIndex = index === this.currentIndex ? 100 : 50 - Math.abs(offset);
-    const rotation = offset * 3;
-    const translateX = offset * 30;
-    const translateY = offset * 10;
+    const rotation = offset * baseRotation;
+    const translateX = offset * baseTranslateX;
+    const translateY = offset * baseTranslateY;
     const opacity = index === this.currentIndex ? 1 : 0.7;
 
     // Apply styles directly for better performance
@@ -90,6 +95,11 @@ class ProjectSlider {
   }
 
   setupEventListeners() {
+    window.addEventListener("resize", () => {
+      this.projects.forEach((_, idx) => {
+        this.projects[idx].style.transform = this.getCardTransform(idx);
+      });
+    });
     // Dot navigation
     this.dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
